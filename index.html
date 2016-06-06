@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<h3> Service Uptime Monitoring </h3>
+
+<a href="http://stats.pingdom.com/t6cabozt4r7f">http://stats.pingdom.com/t6cabozt4r7f</a>
+
+<h3> Browser Compatibility Screenshots </h3>
+
+Screenshots last updated:  {{ site.data.screenshots.timestamp }}
+
+<div class="screenshot-gallery">
+
+  {% for entry in site.data.screenshots.screenshot_entries %}
+    <div class="col-md-4">
+      <a href="{{ entry.url }}" class="thumbnail">
+        <p>{{ entry.name }}</p>
+        <img src="{{ entry.url }}" title="{{ entry.name }}" style="width:150px;height:150px">
+      </a>
+    </div>
+  {% endfor %}
+
+</div>
