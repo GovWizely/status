@@ -6,7 +6,7 @@ settings = {:username => ENV["BROWSERSTACK_USERNAME"], :password => ENV["BROWSER
 client = Screenshot::Client.new(settings)
 
 # Grab latest list of possible browsers for reference
-File.open("all_possible_browsers.yml", 'w'){|f| f.write(client.get_os_and_browsers.to_yaml)}
+#File.open("all_possible_browsers.yml", 'w'){|f| f.write(client.get_os_and_browsers.to_yaml)}
 
 # To modify the browsers getting tested, update the browser hash below, along with the 
 #    corresponding HTML in _posts/2016-05-26-update.md
