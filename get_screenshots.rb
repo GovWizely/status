@@ -2,15 +2,17 @@ require 'screenshot'
 require 'open-uri'
 require 'yaml'
 
-settings = {:username => ENV["BROWSERSTACK_USERNAME"], :password => ENV["BROWSERSTACK_PASSWORD"]}
-client = Screenshot::Client.new(settings)
+def main
+  settings = {:username => ENV["BROWSERSTACK_USERNAME"], :password => ENV["BROWSERSTACK_PASSWORD"]}
+  client = Screenshot::Client.new(settings)
 
-# Grab latest list of possible browsers for reference
-#File.open("all_possible_browsers.yml", 'w'){|f| f.write(client.get_os_and_browsers.to_yaml)}
+  #update_candidate_browsers
+  response = get_screenshot_data(client)
+  update_screenshot_data(response)
+end
 
-# To modify the browsers getting tested, update the browser hash below, along with the 
-#    corresponding HTML in _posts/2016-05-26-update.md
-params = {
+def params
+  {
     :url => "https://success.export.gov/search#/search?q=trade&_k=owl0t9",
     :win_res => "1280x1024",     #Options : "1024x768", "1280x1024"
     :mac_res => "1920x1080",    #Options : "1024x768", "1280x960", "1280x1024", "1600x1200", "1920x1080"
@@ -28,26 +30,37 @@ params = {
             { os: "ios", os_version: "5.0", device: "iPad 2 (5.0)"},
             { os: "android", os_version: "4.4", device: "Samsung Galaxy S5"}
     ]
-}
+  }
+end
 
-request_id = client.generate_screenshots(params)
+def update_candidate_browsers
+  # Grab latest list of possible browsers for reference
+  File.open("all_possible_browsers.yml", 'w'){|f| f.write(client.get_os_and_browsers.to_yaml)}
+end
 
-while client.screenshots_done?(request_id) == false do
-  puts "Waiting 10 seconds for job to finish..."
+def get_screenshot_data(client)
+  request_id = client.generate_screenshots(params)
+
+  while client.screenshots_done?(request_id) == false do
+    puts "Waiting 10 seconds for job to finish..."
+    sleep 10
+  end
+
+  puts "Waiting 10 more seconds to ensure job is finished..."
   sleep 10
+
+  client.screenshots(request_id)
 end
 
-puts "Waiting 10 more seconds to ensure job is finished..."
-sleep 10
+def update_screenshot_data(response)
+  screenshot_entries = response.map do |entry|
+    screenshot_name = entry[:os] + " " + entry[:os_version] + " " +  entry[:browser] + " " +  entry[:browser_version]
+    { 'name' => screenshot_name, 'url' => entry[:image_url] }
+  end
 
-response = client.screenshots(request_id)
+  screenshot_data = { 'screenshot_entries' => screenshot_entries, 'timestamp' => Time.now.strftime("%m/%d/%Y at %l:%M %p")}
 
-screenshot_entries = response.map do |entry|
-  screenshot_name = entry[:os] + " " + entry[:os_version] + " " +  entry[:browser] + " " +  entry[:browser_version]
-  { 'name' => screenshot_name, 'url' => entry[:image_url] }
+  File.open("_data/screenshots.yml", 'w'){|f| f.write(screenshot_data.to_yaml)}
 end
 
-screenshot_data = { 'screenshot_entries' => screenshot_entries, 'timestamp' => Time.now.strftime("%m/%d/%Y at %l:%M %p")}
-
-File.open("_data/screenshots.yml", 'w'){|f| f.write(screenshot_data.to_yaml)}
-
+main
