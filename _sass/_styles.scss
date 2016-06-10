@@ -1,5 +1,5 @@
 iframe {
-  width: 160%;
+  width: 145%;
   height: 700px;
   border: 2px solid gray;
   display: block;
@@ -18,4 +18,13 @@ iframe {
 #iframe-wrapper {
   height: 700px;
   margin-bottom: -150px;
+}
+
+#page-wrapper {
+  margin: 0px;
+  padding: 0px;
+}
+
+.page-content {
+  padding: 15px;
 }
