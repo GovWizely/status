@@ -1,19 +1,19 @@
 ---
 screenshot_entries:
 - name: Windows 10 ie 11.0
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/win10_ie_11.0.png
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/win10_ie_11.0.png
 - name: Windows 10 firefox 45.0
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/win10_firefox_45.0.png
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/win10_firefox_45.0.png
 - name: Windows 10 chrome 50.0
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/win10_chrome_50.0.png
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/win10_chrome_50.0.png
 - name: Windows 7 ie 10.0
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/win7_ie_10.0.png
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/win7_ie_10.0.png
 - name: OS X El Capitan safari 9.1
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/macelc_safari_9.1.png
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/macelc_safari_9.1.png
 - name: 'ios 8.3 iPhone 6 '
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/ios_iPhone-6_8.3_portrait.jpg
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/ios_iPhone-6_8.3_portrait.jpg
 - name: 'ios 5.0 iPad 2 (5.0) '
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/ios_iPad-2-(5.0)_5.0_portrait.jpg
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/ios_iPad-2-(5.0)_5.0_portrait.jpg
 - name: 'android 4.4 Samsung Galaxy S5 '
-  url: https://www.browserstack.com/screenshots/2338aca68ef1615943eb881252f70012db13e41d/android_Samsung-Galaxy-S5_4.4_portrait.png
-timestamp: 06/07/2016 at 11:27 AM
+  url: https://www.browserstack.com/screenshots/9fea7259f7f90ae9e77333bbdf29bfeffb5972f9/android_Samsung-Galaxy-S5_4.4_portrait.png
+timestamp: 06/21/2016 at 10:17 AM
