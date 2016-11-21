@@ -6,14 +6,14 @@ def main
   settings = {:username => ENV["BROWSERSTACK_USERNAME"], :password => ENV["BROWSERSTACK_PASSWORD"]}
   client = Screenshot::Client.new(settings)
 
-  #update_candidate_browsers
+  #update_candidate_browsers(client)
   response = get_screenshot_data(client)
   update_screenshot_data(response)
 end
 
 def params
   {
-    :url => "https://success.export.gov/search#/search?q=trade&_k=owl0t9",
+    :url => "https://www.export.gov/search#/search/?q=trade&_k=xmyp24",
     :win_res => "1280x1024",     #Options : "1024x768", "1280x1024"
     :mac_res => "1920x1080",    #Options : "1024x768", "1280x960", "1280x1024", "1600x1200", "1920x1080"
     :quality => "compressed",   #Options : "compressed", "original"
@@ -33,7 +33,7 @@ def params
   }
 end
 
-def update_candidate_browsers
+def update_candidate_browsers(client)
   # Grab latest list of possible browsers for reference
   File.open("all_possible_browsers.yml", 'w'){|f| f.write(client.get_os_and_browsers.to_yaml)}
 end
