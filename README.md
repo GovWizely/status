@@ -1,6 +1,6 @@
 # GovWizely Service Status Page
 
-This project is a single-page Jekyll site to display the status of GovWizely services, including Pingdom uptime checks and Browserstack screenshots.
+This project is a single-page Jekyll site to display the status of GovWizely services using Pingdom uptime checks.
 
 ## Local Installation Requirements
 
@@ -74,4 +74,4 @@ https://github.com/mojombo/jekyll
 ## Generate the site and serve
 
 - `bundle exec jekyll serve`
-- Browse to [localhost:4000/stats/](http://localhost:4000/status/) to view the site
+- Browse to [localhost:4000/status/](http://localhost:4000/status/) to view the site

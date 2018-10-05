@@ -7,20 +7,3 @@ layout: default
 <div id="iframe-wrapper">
   <iframe src="https://secure-stats.pingdom.com/t6cabozt4r7f"></iframe> 
 </div>
-
-<h3> Browser Compatibility Screenshots </h3>
-
-<p> Screenshots last updated:  {{ site.data.screenshots.timestamp }} </p>
-
-<div class="screenshot-gallery">
-
-  {% for entry in site.data.screenshots.screenshot_entries %}
-    <div class="col-md-4 col-xs-6">
-      <a href="{{ entry.url }}" class="thumbnail">
-        <p>{{ entry.name }}</p>
-        <img src="{{ entry.url }}" title="{{ entry.name }}" style="width:150px;height:150px">
-      </a>
-    </div>
-  {% endfor %}
-
-</div>
