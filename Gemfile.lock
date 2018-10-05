@@ -8,8 +8,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    browserstack-screenshot (0.0.2)
-      yajl-ruby (= 1.1.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -239,17 +237,15 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.4.0)
-    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  browserstack-screenshot
   github-pages
 
 RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.16.4
+   1.16.5
